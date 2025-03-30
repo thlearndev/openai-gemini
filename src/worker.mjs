@@ -328,6 +328,7 @@ const transformRequest = async (req) => ({
   ...await transformMessages(req.messages),
   safetySettings,
   generationConfig: transformConfig(req),
+  tools: [{ googleSearch: {} }],
 });
 
 const generateChatcmplId = () => {
